@@ -15,15 +15,11 @@
         <link rel="stylesheet" href="{{ asset('css/all.min.css') }}">
         <!-- <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.css"> -->
         <link rel="stylesheet" href="{{ asset('css/sb-admin.css') }}">
-
-        <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
     <body class="font-sans antialiased">
         <div id="app" class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
-            <!-- Page Content -->
-            {{ $slot }}
+            <home-component></home-component>
         </div>
     </body>
 </html>

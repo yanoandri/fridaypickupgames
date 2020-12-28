@@ -3,8 +3,7 @@
         <sidebar-component />
         <div id="content-wrapper" class="d-flex flex-column">
             <div class="container-fluid">
-                <!-- {% block content %}
-                {% endblock %} -->
+                <router-view></router-view>
             </div>
         </div>
     </div>

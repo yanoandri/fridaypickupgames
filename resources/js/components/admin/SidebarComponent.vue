@@ -2,12 +2,13 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" :class="isDashboardToggled ? 'toggled' : ''" id="accordionSidebar">
         <!-- Sidebar - Brand -->
         <div class="mt-5">
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+            <router-link :to="{ name: 'attendance' }" 
+                class="sidebar-brand d-flex align-items-center justify-content-center">
                 <div class="sidebar-brand-icon">
-                    <img src="../../../public/images/logo.jpeg" alt="logo" height="80px" width="80px">
+                    <img src="../../../../public/images/logo.jpeg" alt="logo" height="80px" width="80px">
                 </div>
                 <div class="sidebar-brand-text mx-3">Pickup Games Admin</div>
-            </a>
+            </router-link>
         </div>
 
         <!-- Divider -->
@@ -20,8 +21,8 @@
             </a>
             <div id="collapseDashboard" class="collapse" :class="toggledMenu.player ? 'show' : ''" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="#">Player</a>
-                    <a class="collapse-item" href="#">Attendance</a>
+                    <router-link :to="{ name: 'player' }" class="collapse-item">Player</router-link>
+                    <router-link :to="{ name: 'attendance' }" class="collapse-item">Attendance</router-link>
                 </div>
             </div>
         </li>
@@ -39,8 +40,8 @@
             </a>
             <div id="collapseTwo" class="collapse" :class="toggledMenu.team ? 'show' : ''" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="#">Create a team</a>
-                    <a class="collapse-item" href="#">Today's Team</a>
+                    <router-link :to="{ name: 'team' }" class="collapse-item">Create a team</router-link>
+                    <router-link :to="{ name: 'team' }" class="collapse-item">Today's Team</router-link>
                 </div>
             </div>
             <a class="nav-link collapsed" href="#" :class="!toggledMenu.match ? 'collapsed' : ''" @click="toggledMenu.match = !toggledMenu.match">
@@ -50,7 +51,7 @@
             <div id="collapseThree" class="collapse" :class="toggledMenu.match ? 'show' : ''" aria-labelledby="headingThree" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <!-- <a class="collapse-item" href="#">Create a Match</a> -->
-                    <a class="collapse-item" href="#">Today's Match</a>
+                    <router-link :to="{ name: 'match' }" class="collapse-item">Today's Match</router-link>
                 </div>
             </div>
         </li>

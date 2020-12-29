@@ -28,13 +28,14 @@
 </template>
 
 <script>
+import { path } from '../../general/general.js'
+
 export default {
     name: 'navbar-component',
     data() {
         return {
             isShow: false,
-            logoutUrl: 'http://localhost:8000/logout',
-            loginUrl: 'http://localhost:8000/login',
+            logoutUrl: path.auth.logout,
             csrf: ''
         }
     },

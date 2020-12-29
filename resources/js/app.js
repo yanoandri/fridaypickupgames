@@ -1,5 +1,5 @@
 require('./bootstrap');
-
+// require('dotenv').config();
 require('alpinejs');
 require('@fortawesome/fontawesome-free/js/all.js');
 

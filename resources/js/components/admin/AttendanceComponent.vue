@@ -3,7 +3,8 @@
         <h1>Attendance</h1>
         <div class="card">
             <div class="card-header justify-content-between py-3 d-flex">
-                <a href="#" class="btn btn-md btn-primary">
+                <a class="btn btn-md btn-primary" href="#" 
+                    @click.prevent="isShowModal = !isShowModal">
                     Upload Attendance
                     <i class="fa fa-upload"></i>
                 </a>
@@ -40,16 +41,35 @@
             </div>
         </div>
         <pagination-component />
+        <fileupload-modal-component 
+            title="Upload Attendance" 
+            :isShow="isShowModal" 
+            @close="onClose($event)" />
     </div>
 </template>
 
 <script>
+import FileuploadModalComponent from './general/FileuploadModalComponent.vue'
 import PaginationComponent from './general/PaginationComponent.vue'
+
 
 export default {
     name: 'attendance-component',
     components: {
-        PaginationComponent
+        PaginationComponent,
+        FileuploadModalComponent
+    },
+    data() {
+        return {
+            isShowModal: false
+        }
+    },
+    methods: {
+        onClose(value) {
+            this.isShowModal = value
+        }
     }
 }
 </script>
+
+        
